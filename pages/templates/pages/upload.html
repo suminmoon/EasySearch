@@ -1,0 +1,16 @@
+{% extends 'pages/base.html' %}
+
+{% block body %}
+
+    <h1>Image Upload</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <input name="image" type="file" accept="image/*" />
+        <!--이미지 받는 태그-->
+        <input type="submit" />
+
+    </form>
+
+    <a href="{% url 'pages:index' %}">뒤로 가기</a>
+{% endblock %}
