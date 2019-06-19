@@ -2,8 +2,12 @@
 {% load static %}
 {% block body %}
 <h1>detail page</h1>
-{{text}}
-<!--<a href="#" onclick="window.open('test.html','window팝업','width=300, height=300-->
-<!--, menubar=no, status=no, toolbar=no');">팝업테스트</a>-->
+
+<img src="{% static 'pages/img/sample.jpg' %}" width="200" height="200">
+
+<!--<p>{{text}}와 이미지 속 품번이 일치하면 결과보기를 눌러주세요!</p>-->
+<p>{{text}} 와 이미지 속 품번이 일치하면 <a class="btn btn-warning" href="{% url 'pages:result' %}">결과보기</a>를 눌러주세요!</p>
+
+<a class="btn btn-secondary" href="{% url 'pages:upload' %}">뒤로가기</a>
 
 {% endblock %}
