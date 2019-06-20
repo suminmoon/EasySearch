@@ -6,7 +6,7 @@
 <img src="{% static 'pages/img/sample.jpg' %}" width="200" height="200">
 
 <!--<p>{{text}}와 이미지 속 품번이 일치하면 결과보기를 눌러주세요!</p>-->
-<p>{{text}} 와 이미지 속 품번이 일치하면 <a class="btn btn-warning" href="{% url 'pages:result' %}">결과보기</a>를 눌러주세요!</p>
+<p>{{ serial_no }} 와 이미지 속 품번이 일치하면 <a class="btn btn-warning" href="{% url 'pages:result' serial_no %}">결과보기</a>를 눌러주세요!</p>
 
 <a class="btn btn-secondary" href="{% url 'pages:upload' %}">뒤로가기</a>
 
