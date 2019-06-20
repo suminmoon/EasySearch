@@ -34,18 +34,20 @@ def detail(request):
     dbimg = p[len(p)-1].image
     db = str(dbimg)
     im = cv2.imread('media/'+ db )
+    im = cv2.resize(im, (500, 500))
 
     # # Select ROI
     showCrosshair = False
     fromCenter = False
     r = cv2.selectROI("Image", im, fromCenter, showCrosshair)
-    # r = cv2.selectROI(im)
-    #
+
+
     # # Crop image
     imCrop = im[int(r[1]):int(r[1] + r[3]), int(r[0]):int(r[0] + r[2])]
-    # imCrop = im[int(r[1]):int(r[1] + r[2])]
-    #
+
+
     # # Display cropped image
+    imCrop = cv2.resize(imCrop, (160,100)) #(가로,세로)
     cv2.imshow("Image", imCrop)
     cv2.imwrite('pages/static/pages/img/sample.jpg', imCrop)
     cv2.waitKey(0)

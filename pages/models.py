@@ -7,7 +7,7 @@ class Post(models.Model):
     image = ProcessedImageField(
         upload_to='images/',
 
-        processors=[Thumbnail(200, 300)],
+        processors=[Thumbnail(600, 600)],
         format='JPEG',
         options={'quality': 90},
     )
