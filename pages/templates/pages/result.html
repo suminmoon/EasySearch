@@ -4,11 +4,12 @@
 {% block body %}
 
 <h1>최저가로 구매하세요!</h1>
-<p>가격 : {{ price }}</p>
-<p>쇼핑몰 : {{ shop_name }}</p>
-<p>바로가기 : {{ url_minprice }}</p>
+<p>가격 : {{ enuri_total_price }}</p>
+<p>쇼핑몰 : {{ enuri_total_mall }}</p>
+<p>바로가기 : {{ enuri_total_url }}</p>
 
-
-
+<p>에누리 가격: {{enuri_total_price}}</p>
+<p>다나와 가격: {{danawa_total_price}}</p>
+<a href="{{ danawa_total_url }}">다나와 링크</a>
 
 {% endblock %}
