@@ -546,12 +546,33 @@ pre code {
 }
 
 .container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  width:630px;
+  margin: 100px auto 0;
 }
+.box{
+    float: left;
+    width: 255px;
+    height: 515px;
+    margin: 0 30px;
+    position: relative;
+}
+
+.back{
+    width: 255px;
+    height: 515px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.front{
+    width: 220px;
+    height: 420px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 
 @media (min-width: 576px) {
   .container {
@@ -10034,5 +10055,7 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+
+
 }
 /*# sourceMappingURL=bootstrap.css.map */

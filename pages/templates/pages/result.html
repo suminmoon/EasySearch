@@ -2,16 +2,42 @@
 {% load static %}
 
 {% block body %}
-
+<br>
 <h1>최저가로 구매하세요!</h1>
-<p>네이버가격 : {{ naver_total_price }}</p>
+
+<hr>
+
+<br>
+<h3 style="color:green;">NAVER</h3>
+{% if naver_error  %}
+<p>{{ naver_error }} 페이지가 존재하지 않습니다 :(</p>
+{% else %}
+<p>가격 : {{ naver_total_price }}</p>
+<p>쇼핑몰 : {{ naver_total_mall }}</p>
+<a href="{{ naver_total_url }}"> 바로가기 </a>
+{% endif %}
+
+
+<hr>
+
+<h3 style="color:blue">eNURI</h3>
+{% if enuri_error  %}
+<p>{{ enuri_error }} 페이지가 존재하지 않습니다 :(</p>
+{% else %}
+<p>가격 : {{ enuri_total_price }}</p>
 <p>쇼핑몰 : {{ enuri_total_mall }}</p>
-<p>바로가기 : {{ enuri_total_url }}</p>
+<a href="{{ enuri_total_url }}"> 바로가기 </a>
+{% endif %}
 
-<p>에누리 가격: {{enuri_total_price}}</p>
-<p>다나와 가격: {{danawa_total_price}}</p>
-<a href="{{ danawa_total_url }}">다나와 링크</a>
+<hr>
 
-<p>{{ error }}</p>
+<h3 style="color:black">danawa</h3>
+{% if danawa_error  %}
+<p>{{ danawa_error }} 페이지가 존재하지 않습니다 :(</p>
+{% else %}
+<p>가격 : {{ danawa_total_price }}</p>
+<p>쇼핑몰 : {{ danawa_total_mall }}</p>
+<a href="{{ danawa_total_url }}"> 바로가기 </a>
+{% endif %}
 
 {% endblock %}
