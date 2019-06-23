@@ -1,18 +1,18 @@
-{% extends 'pages/base.html' %}
+{% extends 'pages/test.html' %}
 {% load static %}
+
 {% block body %}
 <h1>사진을 확인하세요!</h1>
-
 <!--<div class="container">-->
-<div class="box">
-<div class="back" ><img src="{% static 'pages/img/ipad.png' %}" width="490px" height="270px" class="center-block"></div>
-<div class="front" style="margin-left:45px; margin-top:35px;" ><img src="{% static 'pages/img/sample.jpg' %}"  class="center-block"></div>
-</div>
-
+<!--<div class="box">-->
+<!--<div class="back" ><img src="{% static 'pages/img/ipad.png' %}" width="490px" height="270px" class="center-block"></div>-->
+<!--<div class="front" style="margin-left:45px; margin-top:35px;" ><img src="{% static 'pages/img/sample.jpg' %}"  class="center-block"></div>-->
+<!--</div>-->
+<img src="{% static 'pages/img/sample.jpg' %}">
 <!--<p>{{text}}와 이미지 속 품번이 일치하면 결과보기를 눌러주세요!</p>-->
 <div style="margin-bottom:1000px">
-<p >{{ serial_no }} 와 이미지 속 품번이 일치하면 <a class="btn btn-warning" href="{% url 'pages:result' serial_no %}">결과보기</a>를 눌러주세요!</p>
-</div>
-<a class="btn btn-secondary" href="{% url 'pages:upload' %}">뒤로가기</a>
+<p >{{ serial_no }} 와 이미지 속 품번이 일치하면 <a class="btn btn-warning" href="{% url 'pages:result' serial_no %}">결과보기</a>를 눌러주세요!</p></div>
+<!--<a class="btn btn-secondary" href="{% url 'pages:upload' %}">뒤로가기</a>-->
+   <a class="btn btn-secondary" href="{% url 'pages:index' %}">뒤로 가기</a>
 
 {% endblock %}

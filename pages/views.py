@@ -133,7 +133,7 @@ def result(request, serial_no):
                 'data-original')
 
         except Exception:
-            naver_all_price =100000000000
+            naver_all_price = 1000000000000
             naver_all_mall = "상품이 없습니다."
             naver_all_url = "상품이 없습니다."
             naver_all_img = "상품이 없습니다."
@@ -312,7 +312,7 @@ def result(request, serial_no):
                 'alt')
 
         except Exception:
-            price = 100000000000
+            price = 1000000000000
             url = "상품이 없습니다"
             mall = "상품이 없습니다"
             image = "상품이 없습니다"
@@ -337,10 +337,10 @@ def result(request, serial_no):
 
     context_naver.update(context_enuri)
     context_naver.update(context_danawa)
-    return render(request, 'pages/result.html', context_naver)
+    return render(request, 'pages/result1.html', context_naver)
 
-
-
+def test(request):
+    return render(request, 'pages/test.html')
 
 
 

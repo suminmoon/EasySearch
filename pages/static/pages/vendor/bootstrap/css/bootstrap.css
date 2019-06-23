@@ -489,6 +489,13 @@ mark,
   max-width: 100%;
   height: auto;
 }
+footer{ position:fixed;
+  left:0px;
+  bottom:0px;
+  height:60px;
+  width:100%;
+  background:grey;
+  color: white; }
 
 .figure {
   display: inline-block;
@@ -6561,7 +6568,6 @@ button.bg-success:focus {
 .bg-info {
   background-color: #17a2b8 !important;
 }
-
 a.bg-info:hover, a.bg-info:focus,
 button.bg-info:hover,
 button.bg-info:focus {
