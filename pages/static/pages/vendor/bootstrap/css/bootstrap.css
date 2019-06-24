@@ -6583,6 +6583,13 @@ button.bg-info:focus {
 .bg-warning {
   background-color: #ffc107 !important;
 }
+.bg-gray {
+  background-color: #6c757d !important;
+}
+
+.bg-gray-dark {
+ background-color: #343a40 !important;
+}
 
 a.bg-warning:hover, a.bg-warning:focus,
 button.bg-warning:hover,

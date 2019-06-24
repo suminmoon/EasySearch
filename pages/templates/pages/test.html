@@ -1,8 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
   <!-- Bootstrap core CSS -->
 <link href='{% static "pages/vendor/bootstrap/css/bootstrap.shop.css" %}' rel="stylesheet">
@@ -10,6 +8,82 @@
   <!-- Custom styles for this template -->
   <link href='{% static "pages/css/shop-homepage.css" %}' rel="stylesheet">
 
+  <style>
+    .hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.image-text {
+  text-align: center;
+  position: absolute;
+  top: 60%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  color: ;
+}
+
+    .explain-text {
+  text-align: ;
+  position: absolute;
+  top: 60%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  color: ;
+  font-size: large;
+}
+
+    .back-text {
+  text-align: center;
+  position: absolute;
+  top: 60%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  color: ;
+  font-size: large;
+}
+
+.box1{
+ text-align: center;
+  position: absolute;
+  top: 60%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  color: ;
+  font-size: large;
+}
+.box2{
+ text-align: center;
+  position: absolute;
+  top: 57.2%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+  color: ;
+  font-size: large;
+}
+.result-text{
+ text-align: center;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: ;
+  font-size: large;
+}
+.back2-text{
+ text-align: center;
+  position: absolute;
+  bottom: 6%;
+  left: 59.7%;
+  transform: translate(-50%, -50%);
+  color: ;
+  font-size: large;
+}
+  </style>
 </head>
 
 <body>
@@ -41,21 +115,18 @@
       </div>
     </div>
   </nav>
+</div>
 
   {% block body %}
 
   {% endblock %}
 
-  <footer class="py-5 bg-dark">
+  <footer class="py-4 bg-dark fixed-bottom">
     <div class="container">
-      <p class="m-20 text-center text-white">Copyright &copy; KOOKSUWON 2019</p>
+      <p class="hero-text">Copyright &copy; KOOKSUWON 2019</p>
     </div>
     <!-- /.container -->
   </footer>
-
-
 </body>
 </div>
-
-
 </html>

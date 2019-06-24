@@ -2,17 +2,23 @@
 {% load static %}
 
 {% block body %}
-<h1>사진을 확인하세요!</h1>
-<!--<div class="container">-->
-<!--<div class="box">-->
-<!--<div class="back" ><img src="{% static 'pages/img/ipad.png' %}" width="490px" height="270px" class="center-block"></div>-->
-<!--<div class="front" style="margin-left:45px; margin-top:35px;" ><img src="{% static 'pages/img/sample.jpg' %}"  class="center-block"></div>-->
-<!--</div>-->
-<img src="{% static 'pages/img/sample.jpg' %}">
-<!--<p>{{text}}와 이미지 속 품번이 일치하면 결과보기를 눌러주세요!</p>-->
-<div style="margin-bottom:1000px">
-<p >{{ serial_no }} 와 이미지 속 품번이 일치하면 <a class="btn btn-warning" href="{% url 'pages:result' serial_no %}">결과보기</a>를 눌러주세요!</p></div>
-<!--<a class="btn btn-secondary" href="{% url 'pages:upload' %}">뒤로가기</a>-->
-   <a class="btn btn-secondary" href="{% url 'pages:index' %}">뒤로 가기</a>
+<br>
+<br>
+  <center><h1> CHECK IMAGE </h1> </center>
+<br>
+<hr>
+<div class="box1">
+  <img src="{% static 'pages/img/ipad.png' %}" width="490px" height="330px" class="center-block">
+</div>
+<div class="box2">
+<img src="{% static 'pages/img/sample.jpg' %}"  width="370px" height="251px"  class="center-block">
+</div>
 
+<div class="result-text">
+<h4 >{{ serial_no }} 와 이미지 속 품번이 일치하면 <a class="btn btn-warning" href="{% url 'pages:result' serial_no %}">결과보기</a>를 눌러주세요!</h4>
+</div>
+
+<div class="back2-text">
+<a class="btn btn-secondary" href="{% url 'pages:upload' %}">뒤로 가기</a>
+</div>
 {% endblock %}

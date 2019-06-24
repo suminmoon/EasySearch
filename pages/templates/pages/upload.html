@@ -1,24 +1,36 @@
 {% extends 'pages/test.html' %}
+{% load static %}
+
 
 {% block body %}
-<br>
-<br>
-<br>
-  <center>  <h1>사진을 업로드 해주세요!</h1></center>
 
-    <center><h4>품번 영역을 선택하고 ENTER를 누른 후, 새로운 창이 나오면 다시 한 번 ENTER를 눌러주세요 :)</h4></center>
+<br>
+<br>
+  <center>  <h1>UPLOAD IMAGE   <img src="{% static 'pages/img/photo.png' %}"></h1> </center>
+
+    <!--<center><h4>품번 영역을 선택하고 ENTER를 누른 후, 새로운 창이 나오면 다시 한 번 ENTER를 눌러주세요 :)</h4></center>-->
 <hr>
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="" method="post" enctype="multipart/form-data" class="image-text">
         {% csrf_token %}
 
         <input name="image" type="file" accept="image/*" />
         <!--이미지 받는 태그-->
         <input class="btn btn-primary" type="submit" />
-
     </form>
-   <a class="btn btn-secondary" href="{% url 'pages:index' %}">뒤로 가기</a>
 
+    <div class="explain-text">
+        <div class="card bg-info" style="width:650px">
 
-    <!-- /.container -->
+            <center><h2  class="card-title" style="color:white;">How To Use</h2></center>
 
+            <b><p class="card-body">1. '파일 선택'을 누른 후, 원하는 사진을 선택하여 '제출'을 누르세요.</p></b>
+             <b><p class="card-body">2. 팝업창에서 품명 영역을 (섬세하게) 드래그하세요.</p></b>
+             <b><p class="card-body">3. ENTER를 누른 후, 새로운 창이 나오면 다시 한 번 ENTER를 눌러주세요.</p></b>
+
+        </div>
+    </div>
+
+    <div class="back-text">
+        <a class="btn btn-secondary" href="{% url 'pages:index' %}">뒤로 가기</a>
+    </div>
 {% endblock %}
