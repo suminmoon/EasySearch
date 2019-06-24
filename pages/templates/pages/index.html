@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 
   <title>EASYSEARCH</title>
 
@@ -20,6 +20,18 @@
   <!-- Custom styles for this template -->
   <link href='{% static "pages/css/scrolling-nav.css" %}' rel="stylesheet">
 
+  <style>
+.hero-image {
+  background-image: url({% static 'pages/img/home.png' %});
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  margin-top:50px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+  </style>
 </head>
 
 <body id="page-top">
@@ -47,18 +59,15 @@
     </div>
   </nav>
 
-  <header class="bg-info text-white">
-
+  <!--<div style="background-image : url(media/images/ok.jpg)">-->
+<header class="hero-image">
     <div class="container text-center">
-      <b style="font-size:96px; color:black; font-family:noto2; ">EASYSEARCH</b>
+      <b style="font-size:96px; color:white; font-family:noto2; ">EASYSEARCH</b>
       <a href="{% url 'pages:upload' %}"><img src="{% static 'pages/img/price-tag.png' %}" width="90" height="80" style="margin-bottom:50px;"></a></center>
 <p style="margin-right :  100px; font-family:nanumSR; color: #a5b0b7; font-size:1.1em;">#최저가 #PIRCE_TAG #쇼루밍족 #가격비교 #온라인쇼핑 #텔레그램</p>
-
-
       <!--<p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>-->
     </div>
-  </header>
-
+</header>
 
   <section id="about">
     <div class="container">

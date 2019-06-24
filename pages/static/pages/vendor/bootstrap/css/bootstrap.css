@@ -6538,6 +6538,9 @@ a.close.disabled {
 .bg-primary {
   background-color: #007bff !important;
 }
+.bg-image{
+  background-image : url("./media/images/ok.jpg")
+}
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
@@ -6566,8 +6569,11 @@ button.bg-success:focus {
 }
 
 .bg-info {
-  background-color: #17a2b8 !important;
-}
+  background-image : url("media/images/ok.jpg")
+  }
+
+
+
 a.bg-info:hover, a.bg-info:focus,
 button.bg-info:hover,
 button.bg-info:focus {
