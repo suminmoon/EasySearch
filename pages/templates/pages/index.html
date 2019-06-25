@@ -63,7 +63,7 @@
 <header class="hero-image">
     <div class="container text-center">
       <b style="font-size:96px; color:white; font-family:noto2; ">EASYSEARCH</b>
-      <a href="{% url 'pages:upload' %}"><img src="{% static 'pages/img/price-tag.png' %}" width="90" height="80" style="margin-bottom:50px;"></a></center>
+      <a href="{% url 'pages:upload' %}"><img src="{% static 'pages/img/price-tag.png' %}" width="90" height="80" style="margin-bottom:50px;"></a>
 <p style="margin-right :  100px; font-family:nanumSR; color: #a5b0b7; font-size:1.1em;">#최저가 #PIRCE_TAG #쇼루밍족 #가격비교 #온라인쇼핑 #텔레그램</p>
       <!--<p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>-->
     </div>
@@ -73,9 +73,15 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <!--<h2>About This Page</h2>-->
-          <h4>EASYSEARCH는 사진 한 장, 세 번의 클릭만으로 웹 사이트에서 <br>빠르고 간편하게 최저가를 검색하는 온라인 제품 검색 서비스입니다.</h4>
-          <h5>서비스를 원하면 로고를 클릭하세요!</h5>
+          <h2>About</h2>
+            <br>
+            <br>
+          <center><h4><b>'EASYSEARCH' 는 사진 한 장으로 웹 사이트에서 빠르고 간편하게 <br> 최저가를 검색하는 온라인 제품 검색 서비스입니다.</b></h4></center>
+          <br>
+           <center><img src="{% static 'pages/img/shopping.jpg' %}" width="700" height="300">
+             <br>
+             <br>
+         <h5>서비스를 원하면 로고를 클릭하세요!</h5></center>
           <!--<ul>-->
             <!--<li>Clickable nav links that smooth scroll to page sections</li>-->
             <!--<li>Responsive behavior when clicking nav links perfect for a one page website</li>-->
@@ -88,18 +94,20 @@
   </section>
 
   <section id="services" class="bg-light">
+
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-
-          <h5 style="color:red;">빠르고 간편하게 검색하자! </h5>
-          <b><p>매장에서 몰래 찍은 사진 속 어려운 품명 검색은 그만!
-        사진 한 장으로 빠르고 간편하게 검색하세요~</p></b>
+      <h2>Services</h2>
+          <br>
+          <br>
+          <h5 style="color:red;"><img src="{% static 'pages/img/check-mark.png' %}">  빠르고 간편하게 검색하자! </h5>
+          <b><p>매장에서 찍은 사진 속 복잡한 품명, 어려운 검색은 그만! 사진 한 장으로 빠르고 간편하게 검색하세요~</p></b>
           <hr>
-           <h5 style="color:red;">다양한 사이트의 최저가를 비교! </h5>
+           <h5 style="color:red;"><img src="{% static 'pages/img/check-mark.png' %}">  다양한 사이트의 최저가를 비교! </h5>
           <b><p>제품의 최저가를 네이버, 에누리, 다나와 세 개의 사이트에서 검색합니다. 원하는 가격으로 구매하세요~</p></b>
           <hr>
-           <h5 style="color:red;">원하는 가격 알림 서비스! </h5>
+           <h5 style="color:red;"><img src="{% static 'pages/img/check-mark.png' %}">  원하는 가격 알림 서비스! </h5>
           <b><p>검색된 가격이 마음에 안 들 때는? 텔레그램으로 원하는 가격 알림 서비스를 받아보세요~</p></b>
 
 

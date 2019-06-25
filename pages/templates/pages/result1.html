@@ -18,6 +18,80 @@
   transform: translate(-50%, -50%);
   color: white;
 }
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border : white;
+  border-radius: 0.25rem;
+  background-color: aliceblue;
+}
+
+#portfolio .container-fluid {
+  max-width: 1920px;
+}
+
+#portfolio .container-fluid .portfolio-box {
+  position: relative;
+  display: block;
+}
+
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  opacity: 0;
+  color: #fff;
+  background: rgba(244, 98, 58, 0.9);
+  -webkit-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+  text-align: center;
+}
+
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-category {
+  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-name {
+  font-size: 1.2rem;
+}
+
+#portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption {
+  opacity: 1;
+}
+
+
   </style>
 </head>
 
@@ -58,7 +132,7 @@
 
       <div class="col-lg-3">
 
-        <h1 class="my-4">Shop Name</h1>
+        <h1 class="my-4">SHOP NAME</h1>
         <div class="list-group">
           <a href="https://shopping.naver.com/" class="list-group-item">Naver</a>
           <a href="http://www.enuri.com/" class="list-group-item">eNURI</a>
@@ -98,9 +172,32 @@
           </a>
         </div>
 
+         <section id="portfolio">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+
+	  <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="streamer?category=1#services">
+            <img class="img-fluid" src="resources/img/portfolio/thumbnails/1.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+                Category
+              </div>
+              <div class="project-name">
+             	가나다
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
         <div class="row">
 
-          <div class="col-lg-4 col-md-8 mb-8">
+          <div class="col-lg-4 col-md-8 mb-3">
             <div class="card h-100">
               <!--<a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>-->
               <div class="card-body">
@@ -113,14 +210,16 @@
                     <p>{{ naver_error }} 페이지가 존재하지 않습니다 :(</p>
                     {% else %}
                     <p>쇼핑몰 : {{ naver_total_mall }}</p>
-                    <a href="{{ naver_total_url }}"> {{ naver_total_mall }} 바로가기 </a>
+
+                <a href="{{ naver_total_url }}"> {{ naver_total_mall }} 바로가기 </a>
                         {% endif %}
               </div>
 
             </div>
+
           </div>
 
-          <div class="col-lg-4 col-md-8 mb-8">
+          <div class="col-lg-4 col-md-8 mb-3">
             <div class="card h-100">
               <!--<a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>-->
               <div class="card-body">
@@ -140,7 +239,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-8 mb-8">
+          <div class="col-lg-4 col-md-8 mb-3">
             <div class="card h-100">
               <!--<a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>-->
               <div class="card-body">
