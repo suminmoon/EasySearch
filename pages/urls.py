@@ -8,7 +8,7 @@ urlpatterns= [
     path('upload/', views.upload, name='upload'),
     path('detail/', views.detail, name='detail'),
     path('result/<str:serial_no>/', views.result, name='result'),
-    path('test/', views.test, name='test'),
+    path('telegram/', views.telegram, name='telegram'),
     # path('result/', views.result, name='result'),
 
 
