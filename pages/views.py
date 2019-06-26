@@ -481,7 +481,7 @@ def telegram_bot(request):
 
             if (
                     naver_price == naver_ilban_price == enuri_price == enuri_ilban_price == danawa_price == danawa_ilban_price == "없음"):
-                t_price = "찾을 수 없는 상품입니다"
+                t_price = "찾을 수 없는 상품입니다."
                 requests.get(f'{api_url}/sendMessage?chat_id={chat_id}&text={t_price}')
             else:
                 table = Table()
@@ -489,13 +489,13 @@ def telegram_bot(request):
                 table.productNO = serial_no
                 table.lowPRICE = price
                 table.save()
-                t_price = "저장되었습니다"
+                t_price = "저장되었습니다."
                 requests.get(f'{api_url}/sendMessage?chat_id={chat_id}&text={t_price}')
 
 
 
         else:
-            t_price = "{최저가 상품번호 원하는가격} 형식으로 작성해주세요"
+            t_price = "{최저가 상품번호 원하는가격} 형식으로 작성해주세요."
             requests.get(f'{api_url}/sendMessage?chat_id={chat_id}&text={t_price}')
 
     return JsonResponse({})
