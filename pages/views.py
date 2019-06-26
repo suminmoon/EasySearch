@@ -4,10 +4,13 @@ import cv2
 import os, io, re
 from google.cloud import vision
 from google.cloud.vision import types
-from .models import Post
+from .models import Post, Table
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import requests
+import json
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 
 
 
@@ -350,6 +353,152 @@ def result(request, serial_no):
 def telegram(request):
     return render(request, 'pages/telegram.html')
 
+
+token = '636670076:AAFgJ7kM8IIqbZVQnQeIUdw2UkX3H5gWjZs'
+api_url = f'https://api.telegram.org/bot{token}'
+@csrf_exempt
+@require_http_methods(['GET', 'POST'])
+def telegram_bot(request):
+    dd = json.loads(request.body)
+    message = dd.get('message')
+
+    if message is not None:
+
+        chat_id = message.get('from').get('id')
+        text2 = message.get('text')
+
+        if len(text2.split(' ')) == 3 and '최저가' in text2:
+
+            text = text2.split(' ')[1]
+            price = text2.split(' ')[2]
+            serial_no = text
+
+            ##네이버(가격비교)
+            naver_url = f"https://search.shopping.naver.com/search/all.nhn?origQuery={serial_no}&pagingIndex=1&pagingSize=40&productSet=model&viewType=list&sort=price_asc&frm=NVSHMDL&query={serial_no}"
+            naver_url_obj = urlopen(naver_url)
+            naver_bs = BeautifulSoup(naver_url_obj.read(), "html.parser")
+
+            try:
+                ##가격비교 팝업창
+                ########################### 상품 없으면 여기서 안가져옴
+                naver_price_href = naver_bs.select_one(
+                    '#_search_list > div.search_list.basis > ul > li > div.info > a').get('href')
+                naver_price = "있음"
+
+            except Exception:
+                naver_price = "없음"
+
+            ##네이버(일반상품)
+            try:
+                naver_all_url = f'https://search.shopping.naver.com/search/all.nhn?origQuery={serial_no}&pagingIndex=1&pagingSize=40&viewType=list&sort=price_asc&frm=NVSHATC&query={serial_no}'
+                naver_all_obj = urlopen(naver_all_url)
+                naver_all_bs = BeautifulSoup(naver_all_obj.read(), "html.parser")
+
+                naver_all_price = naver_all_bs.select_one(
+                    "#_search_list > div.search_list.basis > ul > li:nth-of-type(1) > div.info > span.price > em > span").text.replace(
+                    ',', '')
+                naver_ilban_price = "있음"
+
+            except Exception:
+                naver_ilban_price = "없음"
+
+            #########################################################################################
+
+            ##에누리(가격비교)
+            enuri_url = f"http://www.enuri.com/lsv2016/ajax/getSearchGoods_ajax.jsp?key=minprice3&keyword={serial_no}"
+            enuri_res = requests.get(enuri_url)
+            enuri_result = enuri_res.json()
+
+            try:
+                enuri_product = enuri_result.get('srpModelList')[0]
+                enuri_strImgUrl = enuri_product.get('strImgUrl')
+                enuri_price = "있음"
+
+            except Exception:
+                enuri_price = "없음"
+
+            ##에누리(일반상품)
+            try:
+                enuri_ilban_product = enuri_result.get('srpPlnoList')[0]
+                ilban_img = enuri_ilban_product.get('imgurl')
+                enuri_ilban_price = "있음"
+
+            except Exception:
+                enuri_ilban_price = "없음"
+
+            #########################################################################################
+
+            ###다나와(가격비교)
+            danawa_urls = 'http://search.danawa.com/ajax/getProductList.ajax.php'
+
+            try:
+                data1 = {
+                    # 'serial_no': serial_no,
+                    'query': serial_no,
+                    'sort': 'priceASC',
+                    'volumeType': 'vmvs',
+                    'limit': 90
+                }
+
+                headers1 = {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+                    'Referer': 'http://search.danawa.com/dsearch.php'
+                }
+
+                req = requests.post(danawa_urls, data=data1, headers=headers1)
+                danawa_bs = BeautifulSoup(req.text, 'html.parser')
+                danawa_price_url = danawa_bs.select_one('.prod_name > a').get('href')
+                danawa_price = "있음"
+
+
+            except Exception:
+                danawa_price = "없음"
+
+            ##다나와(일반상품)
+            try:
+                data2 = {
+                    'query': serial_no,
+                    'sort': 'priceASC',
+                    'volumeType': 'va',
+                    'limit': 90
+                }
+
+                headers3 = {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36',
+                    'Referer': 'http://search.danawa.com/dsearch.php'
+                }
+                danawa_all_req = requests.post(danawa_urls, data=data2, headers=headers3)
+                danawa_all_bs = BeautifulSoup(danawa_all_req.text, 'html.parser')
+
+                image = danawa_all_bs.select_one('.product_list > li:nth-of-type(1) > div > div > a > img ').get(
+                    'data-original')
+                danawa_ilban_price = "있음"
+
+            except Exception:
+                danawa_ilban_price = "없음"
+
+            if (
+                    naver_price == naver_ilban_price == enuri_price == enuri_ilban_price == danawa_price == danawa_ilban_price == "없음"):
+                t_price = "찾을 수 없는 상품입니다"
+                requests.get(f'{api_url}/sendMessage?chat_id={chat_id}&text={t_price}')
+            else:
+                table = Table()
+                table.userID = chat_id
+                table.productNO = serial_no
+                table.lowPRICE = price
+                table.save()
+                t_price = "저장되었습니다"
+                requests.get(f'{api_url}/sendMessage?chat_id={chat_id}&text={t_price}')
+
+
+
+        else:
+            t_price = "{최저가 상품번호 원하는가격} 형식으로 작성해주세요"
+            requests.get(f'{api_url}/sendMessage?chat_id={chat_id}&text={t_price}')
+
+    return JsonResponse({})
 
 
 

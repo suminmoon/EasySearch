@@ -9,6 +9,7 @@ urlpatterns= [
     path('detail/', views.detail, name='detail'),
     path('result/<str:serial_no>/', views.result, name='result'),
     path('telegram/', views.telegram, name='telegram'),
+    path('telegram_bot/', views.telegram_bot, name='telegram_bot'),
     # path('result/', views.result, name='result'),
 
 

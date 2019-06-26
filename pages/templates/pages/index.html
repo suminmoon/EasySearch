@@ -26,10 +26,29 @@
   background-color: #cccccc;
   height: 500px;
   background-position: center;
+  margin-top:80px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+
+}
+
+.hero-image {
+  background-image: url({% static 'pages/img/home.png' %});
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
   margin-top:50px;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+}
+
+img.border-shadow{
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
   </style>
 </head>
@@ -37,22 +56,25 @@
 <body id="page-top">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top" id="mainNav" style="height:100px;">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">TEAM KOOKSUWON</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top" style="color:#343a40; font-size:20px;">TEAM KOOKSUWON</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            <a class="nav-link js-scroll-trigger" href="#page-top" style="color:#343a40; font-size:20px;">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            <a class="nav-link js-scroll-trigger" href="#about" style="color:#343a40; font-size:20px;">ABOUT</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="#services" style="color:#343a40; font-size:20px;">SERVICES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact" style="color:#343a40; font-size:20px;">CONTACT</a>
           </li>
         </ul>
       </div>
@@ -63,9 +85,12 @@
 <header class="hero-image">
     <div class="container text-center">
       <b style="font-size:96px; color:white; font-family:noto2; ">EASYSEARCH</b>
-      <a href="{% url 'pages:upload' %}"><img src="{% static 'pages/img/price-tag.png' %}" width="90" height="80" style="margin-bottom:50px;"></a>
-<p style="margin-right :  100px; font-family:nanumSR; color: #a5b0b7; font-size:1.1em;">#최저가 #PIRCE_TAG #쇼루밍족 #가격비교 #온라인쇼핑 #텔레그램</p>
-      <!--<p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>-->
+      <!--<a href="{% url 'pages:upload' %}"><img src="{% static 'pages/img/price-tag.png' %}" width="90" height="80" style="margin-bottom:50px;"></a></center>-->
+<p style="margin-left : 0px; font-family:nanumSR; color: #ffff; font-size:1.0em;">#최저가 #PIRCE_TAG #쇼루밍족 #가격비교 #온라인쇼핑 #오프라인쇼핑 #텔레그램</p>
+
+      <a href="#about"><button style="background:#ffff; display: inline-block; border: 6px solid transparent; padding: 6px 20px; border-radius: 3px; margin-top:20px; margin-right:10px;">Learn More</button></a>
+      <a href="{% url 'pages:upload' %}"><button style="background:#6195ff; display: inline-block; border: 6px solid transparent; padding: 6px 20px; color:#ffff;border-radius: 3px;">Get Started</button></a>
+
     </div>
 </header>
 
@@ -73,15 +98,14 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2>About</h2>
-            <br>
-            <br>
-          <center><h4><b>'EASYSEARCH' 는 사진 한 장으로 웹 사이트에서 빠르고 간편하게 <br> 최저가를 검색하는 온라인 제품 검색 서비스입니다.</b></h4></center>
+
+          <center><h4><b style="color:#6195ff; font-size:70px;">EASYSEARCH?</b><br><b>사진 한 장으로 웹 사이트에서 빠르고 간편하게 <br>최저가를 검색하는 온라인 제품 검색 서비스입니다.</b></h4></center>
           <br>
-           <center><img src="{% static 'pages/img/shopping.jpg' %}" width="700" height="300">
+
+           <img class="border-shadow" src="{% static 'pages/img/shopping.jpg' %}" width="850" height="300" style="margin-left:-50px;">
              <br>
              <br>
-         <h5>서비스를 원하면 로고를 클릭하세요!</h5></center>
+         <!--<h5>서비스를 원하면 로고를 클릭하세요!</h5></center>-->
           <!--<ul>-->
             <!--<li>Clickable nav links that smooth scroll to page sections</li>-->
             <!--<li>Responsive behavior when clicking nav links perfect for a one page website</li>-->
@@ -97,18 +121,18 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 mx-auto">
-      <h2>Services</h2>
+        <div class="col-lg-10 mx-auto">
+
           <br>
           <br>
-          <h5 style="color:red;"><img src="{% static 'pages/img/check-mark.png' %}">  빠르고 간편하게 검색하자! </h5>
-          <b><p>매장에서 찍은 사진 속 복잡한 품명, 어려운 검색은 그만! 사진 한 장으로 빠르고 간편하게 검색하세요~</p></b>
+          <h5 style="color:#343a40; font-size:40px;"><img src="{% static 'pages/img/icon1.png' %}" style="width:84px; height:74px;"> &nbsp; 빠르고 간편하게 검색하자! </h5>
+          <b><p style="margin-left:120px;">매장에서 찍은 사진 속 복잡한 품명, 어려운 검색은 그만! 사진 한 장으로 빠르고 간편하게 검색하세요</p></b>
           <hr>
-           <h5 style="color:red;"><img src="{% static 'pages/img/check-mark.png' %}">  다양한 사이트의 최저가를 비교! </h5>
-          <b><p>제품의 최저가를 네이버, 에누리, 다나와 세 개의 사이트에서 검색합니다. 원하는 가격으로 구매하세요~</p></b>
+           <h5 style="color:#343a40; font-size:40px;"><img src="{% static 'pages/img/icon2.png' %}" style="width:76px; height:70px;"> &nbsp; 다양한 사이트의 최저가를 비교! </h5>
+          <b><p style="margin-left:110px;">제품의 최저가를 네이버, 에누리, 다나와 세 개의 사이트에서 검색합니다. 원하는 가격으로 구매하세요</p></b>
           <hr>
-           <h5 style="color:red;"><img src="{% static 'pages/img/check-mark.png' %}">  원하는 가격 알림 서비스! </h5>
-          <b><p>검색된 가격이 마음에 안 들 때는? 텔레그램으로 원하는 가격 알림 서비스를 받아보세요~</p></b>
+           <h5 style="color:#343a40; font-size:40px;"><img src="{% static 'pages/img/icon3.png' %}" style="width:80px; height:76spx;">  &nbsp;원하는 가격 알림 서비스! </h5>
+          <b><p style="margin-left:110px;">검색된 가격이 마음에 안 들 때는? 텔레그램으로 원하는 가격 알림 서비스를 받아보세요</p></b>
 
 
 
@@ -119,7 +143,7 @@
 
   <section id="contact">
   <div class="col-lg-8 mx-auto">
-          <h2>Contact us</h2>
+
   </div>
     <br>
     <br>
@@ -135,7 +159,9 @@
             <p class="card-text">Hi~ Im Jung ~</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
+            <!--<a href="#" class="btn btn-primary">Find Out More!</a>-->
+            <button style="background:#6195ff; display: inline-block; border: 4px solid transparent; padding: 6px 20px; color:#ffff;border-radius: 3px;">Find Out More!</button></a>
+
           </div>
         </div>
       </div>
@@ -149,32 +175,34 @@
             <p class="card-text">Hello World</p>
           </div>
           <div class="card-footer">
-            <a href="https://github.com/suminmoon" class="btn btn-primary">CONTACT</a>
+            <!--<a href="https://github.com/suminmoon" class="btn btn-primary">CONTACT</a>-->
+            <a href="https://github.com/suminmoon"><button style="background:#6195ff; display: inline-block; border: 4px solid transparent; padding: 6px 20px; color:#ffff;border-radius: 3px;">CONTACT</button></a>
           </div>
+
         </div>
       </div>
 
       <div class="col-lg-4 col-md-8 mb-8">
         <div class="card h-100">
-            <h4 class="card-title">LEEJIWON</h4>
+            <h4 class="card-title">LEEJIWEON</h4>
           <img class="card-img-top" src="{% static 'pages/img/jw.gif' %}" alt="">
           <div class="card-body">
 
             <p class="card-text">What?</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
+            <!--<a href="#" class="btn btn-primary">Find Out More!</a>-->
+            <button style="background:#6195ff; display: inline-block; border: 4px solid transparent; padding: 6px 20px; color:#ffff;border-radius: 3px;">Find Out More!</button>
           </div>
         </div>
       </div>
-
 
   </section>
 
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; KOOKSUWON 2019</p>
+      <p class="m-0 text-center text-white" style="font-size:20px;">Copyright &copy; KOOKSUWON 2019</p>
     </div>
     <!-- /.container -->
   </footer>
