@@ -2,12 +2,50 @@
 {% load static %}
 
 {% block body %}
+<div class="container">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top" id="mainNav" style="height:100px;">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="{% url 'pages:index' %}" style="color:#343a40; font-size:20px;">TEAM KOOKSUWON</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="{% url 'pages:index' %}" style="color:#343a40; font-size:20px;">UPLOAD</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about" style="color:#343a40; font-size:20px; ">CHECK</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#services" style="color:#343a40; font-size:20px; ">RESULT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact" style="color:#6195ff; font-size:20px; text-decoration:underline; text-underline-position: under;">TELEGRAM</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<body style="background-color:#f8f9fa;">
-<div style="margin-top:50px;">
-    <p style="font-size:40px;"><img src="{% static 'pages/img/telegram.png' %}" style="width:60px; height:60px;">Telegram 최저가 알림 서비스</p>
-    <p>최저가를 찾았지만 원하는 가격이 아닌가요</p>
 </div>
+<body style="background-color:#f8f9fa;">
+<div style="margin-top:100px; margin-left:160px;">
+    <p style="font-size:50px; font-family: nanums-L;"><img src="{% static 'pages/img/telegram.png' %}" style="width:60px; height:60px;">Telegram 최저가 알림 Bot</p>
+    <!--<p style="font-family: nanums-M; margin-left:60px; font-size:20px;">최저가를 찾았지만 원하는 가격이 아닌가요?</p>-->
+    <p style="font-family: nanums-M; margin-left:60px; font-size:18px;">구매하고자 하는 상품을 원하는 가격에 살 수 있게 도와주는 최저가 알림 서비스</p>
+    <br>
+    <br>
+    <br>
+    <p style="font-family: nanums-L; color:#6195ff; font-size:40px; margin-left:60px;">@easy1_bot</p>
+    <p style="font-family: nanums-M; margin-left:60px; font-size:16px;">1. 텔레그램 접속 후 @easy1_bot 을 검색해 대화창을 엽니다.</p>
+    <p style="font-family: nanums-M; margin-left:60px; font-size:16px;">2. 최저가 상품번호 원하는 가격 순으로 입력합니다.</p>
+    <p style="font-family: nanums-M; margin-left:60px; font-size:16px;">3. 해당 상품이 원하는 가격일 때 알림을 받습니다.</p>
+</div>
+    <image src="{% static 'pages/img/telegram_bot.jpg' %}" width="300" height="440" style="margin-left:930px; margin-top:-400px"></image>
+
+
 </body>
 
 {% endblock %}

@@ -51,7 +51,7 @@
  text-align: center;
   position: absolute;
   top: 55%;
-  left: 36%;
+  left: 32%;
   transform: translate(-50%, -50%);
   color: ;
   font-size: large;
@@ -60,7 +60,7 @@
  text-align: center;
   position: absolute;
   top: 52%;
-  left: 33.8%;
+  left: 29.8%;
   transform: translate(-50%, -50%);
   color: ;
   font-size: large;
@@ -83,39 +83,63 @@
   color: ;
   font-size: large;
 }
+
+@font-face{
+  font-family: 'ba-S';
+  src: url("/static/pages/vendor/fonts/BareunDotum1.ttf");
+}
+@font-face{
+  font-family: 'ba-M';
+  src: url("/static/pages/vendor/fonts/BareunDotum2.ttf");
+}
+@font-face{
+  font-family: 'ba-L';
+  src: url("/static/pages/vendor/fonts/BareunDotum3.ttf");
+}
+
+@font-face{
+  font-family: 'yoon3-S';
+  src: url("/static/pages/vendor/fonts/-윤고딕330-jbi3.ttf");
+}
+@font-face{
+  font-family: 'yoon3-M';
+  src: url("/static/pages/vendor/fonts/-윤고딕340-jbi3.ttf");
+}
+@font-face{
+  font-family: 'yoon3-L';
+  src: url("/static/pages/vendor/fonts/-윤고딕350-jbi3.ttf");
+}
+
+@font-face{
+  font-family: 'nanums-S';
+  src: url("/static/pages/vendor/fonts/NanumSquareR.ttf");
+}
+@font-face{
+  font-family: 'nanums-M';
+  src: url("/static/pages/vendor/fonts/NanumSquareB.ttf");
+}
+@font-face{
+  font-family: 'nanums-L';
+  src: url("/static/pages/vendor/fonts/NanumSquareEB.ttf");
+}
+
+.test {
+   position: relative;
+}
+
+.test2:after {
+   content: '';
+   width: 100%;
+   height: 1px;
+   display: block;
+   position: absolute;
+   margin-top: 20px;
+   border-bottom: 3px solid #f00;
+}
   </style>
 </head>
 
 <body>
-<div class="container">
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top" id="mainNav" style="height:100px;">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top" style="color:#343a40;">TEAM KOOKSUWON</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{% url 'pages:index' %}" style="color:#343a40; font-size:20px;">UPLOAD</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about" style="color:#343a40; font-size:20px;">CHECK</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services" style="color:#343a40; font-size:20px;">RESULT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact" style="color:#343a40; font-size:20px;">TELEGRAM</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-
-</div>
 
   {% block body %}
 

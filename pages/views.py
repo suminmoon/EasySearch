@@ -354,7 +354,8 @@ def telegram(request):
     return render(request, 'pages/telegram.html')
 
 
-token = '636670076:AAFgJ7kM8IIqbZVQnQeIUdw2UkX3H5gWjZs'
+# token = '636670076:AAFgJ7kM8IIqbZVQnQeIUdw2UkX3H5gWjZs'
+token = '832159632:AAFnkI-gVxrV1TBNZEq6gLDYG3jvclW2O0k'
 api_url = f'https://api.telegram.org/bot{token}'
 @csrf_exempt
 @require_http_methods(['GET', 'POST'])
@@ -366,8 +367,8 @@ def telegram_bot(request):
 
         chat_id = message.get('from').get('id')
         text2 = message.get('text')
-
-        if len(text2.split(' ')) == 3 and '최저가' in text2:
+        print(type(chat_id))
+        if len(text2.split(' ')) == 3 and '입력' in text2:
 
             text = text2.split(' ')[1]
             price = text2.split(' ')[2]
@@ -481,7 +482,7 @@ def telegram_bot(request):
 
             if (
                     naver_price == naver_ilban_price == enuri_price == enuri_ilban_price == danawa_price == danawa_ilban_price == "없음"):
-                t_price = "찾을 수 없는 상품입니다."
+                t_price = "찾을 수 없는 상품입니다. 다시 입력해주세요."
                 requests.get(f'{api_url}/sendMessage?chat_id={chat_id}&text={t_price}')
             else:
                 table = Table()
@@ -489,13 +490,27 @@ def telegram_bot(request):
                 table.productNO = serial_no
                 table.lowPRICE = price
                 table.save()
-                t_price = "저장되었습니다."
+                t_price = "저장되었습니다. 해당 상품이 입력된 가격과 일치할 때 다시 알려드릴게요."
                 requests.get(f'{api_url}/sendMessage?chat_id={chat_id}&text={t_price}')
 
 
+        elif len(text2.split(' ')) == 2 and '종료' in text2:
+            product = text2.split(' ')[1]
+            print(product)
+
+            telegramOBJ = Table.objects.all()
+            for table in telegramOBJ:
+                if table.userID == str(chat_id) and table.productNO == product:
+                    table.delete()
+                    t_price = "등록된 내용이 삭제되었습니다."
+                    requests.get(f'{api_url}/sendMessage?chat_id={chat_id}&text={t_price}')
+                else:
+                    t_price = "종료되었습니다."
+                    requests.get(f'{api_url}/sendMessage?chat_id={chat_id}&text={t_price}')
+
 
         else:
-            t_price = "{최저가 상품번호 원하는가격} 형식으로 작성해주세요."
+            t_price = "'입력 상품번호 원하는 가격' 형식으로 작성해주세요."
             requests.get(f'{api_url}/sendMessage?chat_id={chat_id}&text={t_price}')
 
     return JsonResponse({})

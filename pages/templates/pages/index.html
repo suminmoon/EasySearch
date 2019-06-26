@@ -15,7 +15,7 @@
   <title>EASYSEARCH</title>
 
   <!-- Bootstrap core CSS -->
-  <link href='{% static "pages/vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+  <link href='{% static "pages/vendor/bootstrap/css/bootstrap.shop.css" %}' rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href='{% static "pages/css/scrolling-nav.css" %}' rel="stylesheet">
@@ -50,11 +50,55 @@ img.border-shadow{
 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+@font-face{
+  font-family: 'ba-S';
+  src: url("/static/pages/vendor/fonts/BareunDotum1.ttf");
+}
+@font-face{
+  font-family: 'ba-M';
+  src: url("/static/pages/vendor/fonts/BareunDotum2.ttf");
+}
+@font-face{
+  font-family: 'ba-L';
+  src: url("/static/pages/vendor/fonts/BareunDotum3.ttf");
+}
+
+@font-face{
+  font-family: 'yoon3-S';
+  src: url("/static/pages/vendor/fonts/-윤고딕330-jbi3.ttf");
+}
+@font-face{
+  font-family: 'yoon3-M';
+  src: url("/static/pages/vendor/fonts/-윤고딕340-jbi3.ttf");
+}
+@font-face{
+  font-family: 'yoon3-L';
+  src: url("/static/pages/vendor/fonts/-윤고딕350-jbi3.ttf");
+}
+
+@font-face{
+  font-family: 'nanums-S';
+  src: url("/static/pages/vendor/fonts/NanumSquareR.ttf");
+}
+@font-face{
+  font-family: 'nanums-M';
+  src: url("/static/pages/vendor/fonts/NanumSquareB.ttf");
+}
+@font-face{
+  font-family: 'nanums-L';
+  src: url("/static/pages/vendor/fonts/NanumSquareEB.ttf");
+}
+
+@font-face{
+  font-family: 'FT';
+  src: url("/static/pages/vendor/fonts/Futura-Bold-BT.ttf");
+}
+
   </style>
 </head>
 
 <body id="page-top">
-
+<div class="container">
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top" id="mainNav" style="height:100px;">
     <div class="container">
@@ -65,44 +109,49 @@ img.border-shadow{
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#page-top" style="color:#343a40; font-size:20px;">HOME</a>
+            <a class="nav-link js-scroll-trigger" href="#page-top" style="font-size:20px; ">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about" style="color:#343a40; font-size:20px;">ABOUT</a>
+            <a class="nav-link js-scroll-trigger" href="#about" style=" font-size:20px; ">ABOUT</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services" style="color:#343a40; font-size:20px;">SERVICES</a>
+            <a class="nav-link js-scroll-trigger" href="#services" style=" font-size:20px; ">SERVICES</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact" style="color:#343a40; font-size:20px;">CONTACT</a>
+            <a class="nav-link js-scroll-trigger" href="#contact" style=" font-size:20px;">CONTACT</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+</div>
 
   <!--<div style="background-image : url(media/images/ok.jpg)">-->
 <header class="hero-image">
     <div class="container text-center">
-      <b style="font-size:96px; color:white; font-family:noto2; ">EASYSEARCH</b>
+      <b style="font-size:96px; color:white; font-family:yoon3-L;  ">EASYSEARCH</b>
       <!--<a href="{% url 'pages:upload' %}"><img src="{% static 'pages/img/price-tag.png' %}" width="90" height="80" style="margin-bottom:50px;"></a></center>-->
-<p style="margin-left : 0px; font-family:nanumSR; color: #ffff; font-size:1.0em;">#최저가 #PIRCE_TAG #쇼루밍족 #가격비교 #온라인쇼핑 #오프라인쇼핑 #텔레그램</p>
+<p style="margin-left : 0px; font-family:nanums-M; color: #ffff; font-size:1.08em;">#최저가 #PIRCE_TAG #쇼루밍족 #가격비교 #온라인쇼핑 #오프라인쇼핑 #텔레그램</p>
 
-      <a href="#about"><button style="background:#ffff; display: inline-block; border: 6px solid transparent; padding: 6px 20px; border-radius: 3px; margin-top:20px; margin-right:10px;">Learn More</button></a>
-      <a href="{% url 'pages:upload' %}"><button style="background:#6195ff; display: inline-block; border: 6px solid transparent; padding: 6px 20px; color:#ffff;border-radius: 3px;">Get Started</button></a>
+      <a href="#about"><button style="background:#ffff; display: inline-block; border: 6px solid transparent; padding: 6px 20px; border-radius: 3px; margin-top:20px; margin-right:10px; font-family:nanums-L; ">Learn More</button></a>
+      <a href="{% url 'pages:upload' %}"><button style="background:#6195ff; display: inline-block; border: 6px solid transparent; padding: 6px 20px; color:#ffff;border-radius: 3px; font-family:nanums-L; ">Get Started</button></a>
 
     </div>
 </header>
 
-  <section id="about">
+  <section id="about" >
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 mx-auto">
+        <div class="col-lg-10 mx-auto">
 
-          <center><h4><b style="color:#6195ff; font-size:70px;">EASYSEARCH?</b><br><b>사진 한 장으로 웹 사이트에서 빠르고 간편하게 <br>최저가를 검색하는 온라인 제품 검색 서비스입니다.</b></h4></center>
+          <center>
+            <b style="color:#6195ff; font-size:70px; font-family:yoon3-L; text-shadow:#dce2eb 2px 2px 2px;">EASYSEARCH?</b>
+            <br>
+            <b style="font-family:nanums-M; font-size:20px;">사진 한 장으로 웹 사이트에서 빠르고 간편하게 최저가를 검색하는 온라인 제품 검색 서비스입니다.</b>
+          </center>
           <br>
-
-           <img class="border-shadow" src="{% static 'pages/img/shopping.jpg' %}" width="850" height="300" style="margin-left:-50px;">
+<br>
+           <img class="border-shadow" src="{% static 'pages/img/shopping.jpg' %}" width="850" height="300" style="margin-left:40px;">
              <br>
              <br>
          <!--<h5>서비스를 원하면 로고를 클릭하세요!</h5></center>-->
@@ -125,14 +174,14 @@ img.border-shadow{
 
           <br>
           <br>
-          <h5 style="color:#343a40; font-size:40px;"><img src="{% static 'pages/img/icon1.png' %}" style="width:84px; height:74px;"> &nbsp; 빠르고 간편하게 검색하자! </h5>
-          <b><p style="margin-left:120px;">매장에서 찍은 사진 속 복잡한 품명, 어려운 검색은 그만! 사진 한 장으로 빠르고 간편하게 검색하세요</p></b>
+          <h5 style="color:#343a40; font-size:40px; font-family:nanums-M; "><img src="{% static 'pages/img/icon1.png' %}" style="width:84px; height:74px;"> &nbsp; 빠르고 간편하게 검색하자! </h5>
+          <b><p style="margin-left:120px; font-family:nanums-M;">매장에서 찍은 사진 속 복잡한 품명, 어려운 검색은 그만! 사진 한 장으로 빠르고 간편하게 검색하세요</p></b>
           <hr>
-           <h5 style="color:#343a40; font-size:40px;"><img src="{% static 'pages/img/icon2.png' %}" style="width:76px; height:70px;"> &nbsp; 다양한 사이트의 최저가를 비교! </h5>
-          <b><p style="margin-left:110px;">제품의 최저가를 네이버, 에누리, 다나와 세 개의 사이트에서 검색합니다. 원하는 가격으로 구매하세요</p></b>
+           <h5 style="color:#343a40; font-size:40px;  font-family:nanums-M;"><img src="{% static 'pages/img/icon2.png' %}" style="width:73px; height:73px;"> &nbsp; 다양한 사이트의 최저가를 비교! </h5>
+          <b><p style="margin-left:110px; font-family:nanums-M;">제품의 최저가를 네이버, 에누리, 다나와 세 개의 사이트에서 검색합니다. 원하는 가격으로 구매하세요</p></b>
           <hr>
-           <h5 style="color:#343a40; font-size:40px;"><img src="{% static 'pages/img/icon3.png' %}" style="width:80px; height:76spx;">  &nbsp;원하는 가격 알림 서비스! </h5>
-          <b><p style="margin-left:110px;">검색된 가격이 마음에 안 들 때는? 텔레그램으로 원하는 가격 알림 서비스를 받아보세요</p></b>
+           <h5 style="color:#343a40; font-size:40px;  font-family:nanums-M;"><img src="{% static 'pages/img/icon3.png' %}" style="width:80px; height:76spx;">  &nbsp;원하는 가격 알림 서비스! </h5>
+          <b><p style="margin-left:110px; font-family:nanums-M;">검색된 가격이 마음에 안 들 때는? 텔레그램으로 원하는 가격 알림 서비스를 받아보세요</p></b>
 
 
 
@@ -160,7 +209,7 @@ img.border-shadow{
           </div>
           <div class="card-footer">
             <!--<a href="#" class="btn btn-primary">Find Out More!</a>-->
-            <button style="background:#6195ff; display: inline-block; border: 4px solid transparent; padding: 6px 20px; color:#ffff;border-radius: 3px;">Find Out More!</button></a>
+            <button style="background:#6195ff; display: inline-block; border: 4px solid transparent; padding: 6px 20px; color:#ffff;border-radius: 3px;">CONTACT</button></a>
 
           </div>
         </div>
@@ -188,11 +237,11 @@ img.border-shadow{
           <img class="card-img-top" src="{% static 'pages/img/jw.gif' %}" alt="">
           <div class="card-body">
 
-            <p class="card-text">What?</p>
+            <p class="card-text">easysearch easyone</p>
           </div>
           <div class="card-footer">
             <!--<a href="#" class="btn btn-primary">Find Out More!</a>-->
-            <button style="background:#6195ff; display: inline-block; border: 4px solid transparent; padding: 6px 20px; color:#ffff;border-radius: 3px;">Find Out More!</button>
+            <button style="background:#6195ff; display: inline-block; border: 4px solid transparent; padding: 6px 20px; color:#ffff;border-radius: 3px;">CONTACT</button>
           </div>
         </div>
       </div>
@@ -215,7 +264,7 @@ img.border-shadow{
   <script src='{% static "pages/vendor/jquery-easing/jquery.easing.min.js" %}'></script>
 
   <!-- Custom JavaScript for this theme -->
-  <script src="js/scrolling-nav.js"></script>
+  <script src='{% static "pages/js/scrolling-nav.js" %}'></script>
 
 </body>
 
