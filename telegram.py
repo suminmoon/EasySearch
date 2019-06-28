@@ -4,8 +4,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import requests
 
-# token = '636670076:AAFgJ7kM8IIqbZVQnQeIUdw2UkX3H5gWjZs'
-token = '832159632:AAFnkI-gVxrV1TBNZEq6gLDYG3jvclW2O0k'
+token = ''
 api_url = f'https://api.telegram.org/bot{token}'
 def telegram_crontab():
 
@@ -304,11 +303,11 @@ def telegram_crontab():
 
                         if (mylist.index(minprice) == 0):
                             t_price = f'''
-    <b>최저가 : {naver_total_price}</b>
-    쇼핑몰 : {naver_total_mall}
-    <a href="{naver_total_url}">URL</a>
-    <a href="{naver_total_image}">이미지 링크</a>
-    '''
+<b>최저가 : {naver_total_price}</b>
+쇼핑몰 : {naver_total_mall}
+<a href="{naver_total_url}">URL</a>
+<a href="{naver_total_image}">이미지 링크</a>
+'''
                             # t_price = rf'<a href="{naver_total_url}">쇼핑몰링크</a>'
                             params = {
                                 'chat_id': chat_id,
@@ -321,11 +320,11 @@ def telegram_crontab():
 
                         elif (mylist.index(minprice) == 1):
                             t_price = f'''
-    <b>최저가 : {enuri_total_price}</b>
-    쇼핑몰 : {enuri_total_mall}
-    <a href="{naver_total_url}">URL</a>
-    <a href="{naver_total_image}">이미지 링크</a>
-    '''
+<b>최저가 : {enuri_total_price}</b>
+쇼핑몰 : {enuri_total_mall}
+<a href="{naver_total_url}">URL</a>
+<a href="{naver_total_image}">이미지 링크</a>
+'''
                             # t_price = rf'<a href="{naver_total_url}">쇼핑몰링크</a>'
                             params = {
                                 'chat_id': chat_id,
@@ -337,11 +336,11 @@ def telegram_crontab():
                             telegramobj.delete()
                         else:
                             t_price = f'''
-    <b>최저가 : {naver_total_price}</b>
-    쇼핑몰 : {naver_total_mall}
-    <a href="{naver_total_url}">URL</a>
-    <a href="{naver_total_image}">이미지 링크</a>
-    '''
+<b>최저가 : {naver_total_price}</b>
+쇼핑몰 : {naver_total_mall}
+<a href="{naver_total_url}">URL</a>
+<a href="{naver_total_image}">이미지 링크</a>
+'''
                             # t_price = rf'<a href="{naver_total_url}">쇼핑몰링크</a>'
                             params = {
                                 'chat_id': chat_id,
@@ -354,9 +353,9 @@ def telegram_crontab():
                     else:
                         t_price = "일치하는 가격이 없습니다. 다시 알림 드릴게요."
                         requests.get(f'{api_url}/sendMessage?chat_id={chat_id}&text={t_price}')
-                    print(tprice)
+                # print(tprice)
         else:
-           pass
+            pass
 
 if __name__ == '__main__':
     path = os.path.dirname(__file__)
